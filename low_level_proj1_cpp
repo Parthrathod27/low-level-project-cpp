@@ -1,0 +1,152 @@
+#include <iostream>
+#include <iomanip>
+#include <unistd.h>  // for sleep
+using namespace std;
+
+void loading(string text) {
+    cout << "\n" << text;
+    for (int i = 0; i < 3; i++) {
+        cout << ".";
+        cout.flush();
+        sleep(1);
+    }
+    cout << "\n";
+}
+
+void clear() {
+    cout << "\033[2J\033[1;1H"; // screen clear rehne do (color nahi hai)
+}
+
+class Bank {
+private:
+    string name;
+    int balance;
+
+public:
+    Bank() {
+        name = "Unknown";
+        balance = 0;
+    }
+
+    void createAccount(string n, int b) {
+        name = n;
+        balance = b;
+    }
+
+    void deposit(int amount) {
+        balance += amount;
+        cout << "Amount Deposited Successfully!\n";
+    }
+
+    void withdraw(int amount) {
+        if (amount > balance) {
+            cout << "Insufficient Balance!\n";
+        } else {
+            balance -= amount;
+            cout << "Withdrawal Successful!\n";
+        }
+    }
+
+    void showDetails() {
+        cout << "\n========== ACCOUNT DETAILS ==========\n";
+        cout << "Name        : " << name << endl;
+        cout << "Balance     : " << balance << endl;
+        cout << "=====================================\n\n";
+    }
+};
+
+void header() {
+    cout << "\n" << setw(55) << "STATE BANK OF INDIA" << "\n";
+    cout << setw(61) << "----- DIGITAL BANKING SYSTEM -----" << "\n\n";
+}
+
+void menu() {
+    cout << "========== SBI MENU ==========\n";
+    cout << "1. Deposit Money\n";
+    cout << "2. Withdraw Money\n";
+    cout << "3. Check Balance\n";
+    cout << "4. Exit\n";
+    cout << "================================\n";
+}
+
+int main() {
+    clear();
+    header();
+
+    Bank user;
+
+    cout << "Do you want to create an account? (0 = Yes, 1 = No): ";
+    int x;
+    cin >> x;
+
+    if (x == 1) {
+        cout << "\n" << setw(45) << "THANK YOU, VISIT AGAIN :)" << "\n";
+        return 0;
+    }
+
+    // Account creation
+    string username;
+    int initialDeposit;
+
+    cout << "\nEnter Your Name: ";
+    cin >> username;
+
+    cout << "Enter Initial Deposit: ";
+    cin >> initialDeposit;
+
+    loading("Creating your account");
+
+    user.createAccount(username, initialDeposit);
+
+    cout << "\nACCOUNT CREATED SUCCESSFULLY!\n\n";
+
+    sleep(1);
+    clear();
+
+    header();
+
+    // MENU LOOP
+    while (true) {
+        menu();
+
+        int choice;
+        cout << "\nEnter Your Choice: ";
+        cin >> choice;
+
+        if (choice == 1) {
+            int amt;
+            cout << "\nEnter Amount to Deposit: ";
+            cin >> amt;
+            user.deposit(amt);
+        }
+
+        else if (choice == 2) {
+            int amt;
+            cout << "\nEnter Amount to Withdraw: ";
+            cin >> amt;
+            user.withdraw(amt);
+        }
+
+        else if (choice == 3) {
+            user.showDetails();
+        }
+
+        else if (choice == 4) {
+            cout << "\n" << setw(45) << "THANK YOU FOR USING SBI :)" << "\n";
+            break;
+        }
+
+        else {
+            cout << "Invalid Choice! Try Again.\n";
+        }
+
+        cout << "\nPress Enter to continue...";
+        cin.ignore();
+        cin.get();
+        clear();
+        header();
+    }
+
+    return 0;
+}
+
