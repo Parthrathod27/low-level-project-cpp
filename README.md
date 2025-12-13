@@ -9,8 +9,8 @@ This repository contains **beginner-friendly low-level C++ projects** that demon
 1. **SBI Digital Banking System**  
    - A simple console-based banking system with account creation, deposit, withdrawal, and balance checking.
    
-2. **[Project 2 Name]**  
-   - Description of what the project does, e.g., a basic calculator using C++ functions and classes.
+2. **Student management**  
+   - A simple Student Management System built in C++ that allows users to add, view, search, update, and delete student records using file handling..
 
 3. **[Project 3 Name]**  
    - Description, e.g., a student management system demonstrating classes and arrays.
