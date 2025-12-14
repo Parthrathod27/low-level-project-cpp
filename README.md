@@ -12,8 +12,8 @@ This repository contains **beginner-friendly low-level C++ projects** that demon
 2. **Student management**  
    - A simple Student Management System built in C++ that allows users to add, view, search, update, and delete student records using file handling..
 
-3. **[Project 3 Name]**  
-   - Description, e.g., a student management system demonstrating classes and arrays.
+3. **[Tic Tac Toe]**  
+   - A simple tic tac toe game built in c++ played between 2 players . 
 
 4. **[Project 4 Name]**  
    - Description, e.g., a basic Tic-Tac-Toe game using loops and functions.
