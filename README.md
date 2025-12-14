@@ -12,7 +12,7 @@ This repository contains **beginner-friendly low-level C++ projects** that demon
 2. **Student management**  
    - A simple Student Management System built in C++ that allows users to add, view, search, update, and delete student records using file handling..
 
-3. **[Tic Tac Toe]**  
+3. **Tic Tac Toe**  
    - A simple tic tac toe game built in c++ played between 2 players . 
 
 4. **[Project 4 Name]**  
