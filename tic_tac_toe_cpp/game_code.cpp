@@ -137,12 +137,4 @@ int main(){
         }
 
         // draw check
-        if(moveCount == 9){
-            cout << "GAME DRAW 🤝\n";
-            break;
-        }
-    }
-
-    return 0;
-}
-
+     
